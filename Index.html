@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="container">
+    <div class="calculator">
+        
+        <h1>M<img src="images/logo512.png" width="27">lamike Devs<br><span>Age Calculator</span></h1>
+        <div class="input-box">
+            <input type="date" id="date">
+            <button onclick="calculateAge()">Calculate</button>
+        </div>
+        <p id="result"></p> <!-- Add an element to display the result -->
+    </div>
+
+    <script>
+        let userInfo = document.getElementById('date');
+        let resultElement = document.getElementById('result');
+
+        userInfo.max = new Date().toISOString().split('T')[0];
+
+        function calculateAge(){
+            let birthDate = new Date(userInfo.value);
+            let today = new Date();
+            let ageInMilliseconds = today - birthDate;
+
+            // Calculate years, months, and days
+            let yearInMs = 1000 * 60 * 60 * 24 * 365.25;
+            let years = Math.floor(ageInMilliseconds / yearInMs);
+            let monthsInMs = 1000 * 60 * 60 * 24 * 30.44; // Average number of days in a month
+            let months = Math.floor(ageInMilliseconds / monthsInMs) % 12;
+            let days = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24)) % 30;
+
+            // Adjust grammar
+            let yearText = years === 1 ? 'year' : 'years';
+            let monthText = months === 1 ? 'month' : 'months';
+            let dayText = days === 1 ? 'day' : 'days';
+
+            resultElement.innerHTML = `You're <span>${years}</span> ${yearText}, <span>${months}</span> ${monthText}, <span>${days}</span> ${dayText} old.`;
+        }
+    </script>
+</div>
+</body>
+</html>

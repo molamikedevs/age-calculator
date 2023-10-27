@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #190482, #80B3FF);
+    color: #feffee;
+    padding: 10px;
+    
+}
+
+.calculator {
+    width: 100%;
+    max-width: 600px;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.calculator h1 {
+    font-size: 50px;
+    margin-left: 60px;
+}
+
+.calculator h1 span {
+    color: #ED7D31;
+   
+}
+
+.input-box {
+margin: 40px 60px 0;
+padding: 35px;
+border-radius: 10px;
+background: rgba(225, 225, 225, 0.5);
+display: flex;
+align-items: center;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+.input-box input {
+    flex: 1;
+    margin-right: 20px;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.input-box button {
+ background: #ED7D31;
+ font-size: 14px;
+ border: 0;
+ outline: 0;
+ padding: 15px 30px;
+ border-radius: 5px;
+ font-weight: 700;
+ color: #333;
+ cursor: pointer;
+ transition: 1s;
+}
+
+.input-box button:hover {
+background: #EF6D36;
+}
+
+.input-box input::webkit-calendar-picker-indicator {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    position: absolute;
+    background-position: calc(100% - 10px);
+    background-size: 30px;
+    cursor: pointer;
+}
+
+#result {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 55px;
+}
+
+#result span {
+    color: #EF6D36;
+}
+
+@media (max-width: 768px) {
+ .container {
+    background: linear-gradient(to bottom, green, white, blue);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+ }
+
+ .calculator {
+    position: absolute;
+    top: 22%;
+    display: flex;
+    justify-content: start;
+    align-items: stretch;
+   flex-direction: column;
+   max-width: 700px;
+   margin-left: auto;
+ }
+
+ .input-box {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+ }
+
+.calculator h1 {
+    font-size: 40px;
+}
+
+ .input-box button {
+    padding: 5px 20px;
+ }
+
+ #result {
+    font-size: 18px;
+ }
+}
